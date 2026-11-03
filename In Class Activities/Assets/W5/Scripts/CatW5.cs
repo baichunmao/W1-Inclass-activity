@@ -15,7 +15,9 @@ public class CatW5 : MonoBehaviour
         // STEP 1
         // This CatW5 class is a Component on the Cat GameObject. It controls
         //      the cat's movement.
-        //
+        Vector3 translation = Vector3.zero;
+        float moveInput = Input.GetAxis("Vertical");
+        translation = Vector3.forward * moveInput;
         // The Cat should move forwards and backwards with the W and S keys.
         //
         // Use the "static properties" listed under the Vector3 documentation:
@@ -40,10 +42,15 @@ public class CatW5 : MonoBehaviour
         // If _flipWSControls is true, interpret the value of translation as the
         //      OPPOSITE value, so that W moves the player backwards and S moves
         //      them forwards.
-        //
+        if (_flipWSControls)
+        {
+            translation *= -1f;
+        }
+        transform.Translate(translation * _moveSpeed * Time.deltaTime);
+        
         // MULTIPLY one of your vectors with a certain value to do this. >:)
 
-        Vector3 translation = Vector3.zero;
+        
         
 
 
