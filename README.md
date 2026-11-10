@@ -21,6 +21,11 @@ When the balls bounce repeatedly, their color value keeps getting overwritten an
 ### W4
 1. I added a Rigidbody to the Cat and the Ball so they could interact using Unity’s physics system. I used a Capsule Collider for the Cat, a Sphere Collider for the Ball, and a Box Collider for the Goal. I checked Is Trigger on the Goal’s collider so the game could detect when the Ball entered the goal area. I kept the Cat and Ball colliders as regular colliders so they could physically collide with each other and the ground.
 2. During testing, I checked the collider sizes and positions to make sure they matched the objects. I also checked the Rigidbody settings and the Is Trigger option on the Goal. I fixed the settings so the Cat could interact with the Ball and the Ball could trigger the goal detection when it entered the goal area.
+
+### W6
+1. The DeerW5 class needs two member variables: Transform _target: Stores the Transform of the target GameObject. It is marked with [SerializeField] so that the target can be assigned in the Unity Inspector. NavMeshAgent _agent: Stores the NavMeshAgent component attached to the deer. It is used to control the deer’s movement.
+2. The class needs the Unity-provided Start() method. I will also use GetComponent<NavMeshAgent>() to get the NavMeshAgent component from the deer GameObject. The Start() method is suitable because the deer only needs to receive its destination when the game begins
+3. The Start() method should perform the following steps:Get the NavMeshAgent component attached to the deer. Get the position of the target GameObject. Use SetDestination() to tell the deer where to walk. Let the NavMeshAgent automatically calculate a path and move the deer towards the target.
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
