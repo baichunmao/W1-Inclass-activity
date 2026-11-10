@@ -26,6 +26,14 @@ When the balls bounce repeatedly, their color value keeps getting overwritten an
 1. The DeerW5 class needs two member variables: Transform _target: Stores the Transform of the target GameObject. It is marked with [SerializeField] so that the target can be assigned in the Unity Inspector. NavMeshAgent _agent: Stores the NavMeshAgent component attached to the deer. It is used to control the deer’s movement.
 2. The class needs the Unity-provided Start() method. I will also use GetComponent<NavMeshAgent>() to get the NavMeshAgent component from the deer GameObject. The Start() method is suitable because the deer only needs to receive its destination when the game begins
 3. The Start() method should perform the following steps:Get the NavMeshAgent component attached to the deer. Get the position of the target GameObject. Use SetDestination() to tell the deer where to walk. Let the NavMeshAgent automatically calculate a path and move the deer towards the target.
+
+### W7
+activity 1: https://docs.google.com/document/d/13yni-LML8n_PMU0dRYNeQS41JEUzd5uGydpQOMvt19s/edit?usp=drivesdk
+my part:  Math: a. 3D vector basics: W5 pre-learning b. vector addition: W5 pre-learning c. vector magnitude and direction: W5 slides d. vector*scalar multiplication: W5 slides e. Vector3.Distance: W6 pre-learning f. normalized vectors: W6 slides
+activity 2:
+1. The BatW6 class needs a Transform variable to store the player’s target, a float variable to control the bat’s movement speed, and a bool variable to check whether the bat is chasing the player.
+2. The class needs Start() and Update(), which are provided by Unity. It also needs two custom public methods: StartChasingPlayer() and StopChasingPlayer()
+3. Start() enables chasing when the game begins. Update() moves the bat towards the target while chasing is enabled. StartChasingPlayer() allows the bat to start chasing the player, while StopChasingPlayer() stops the bat from chasing.
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
