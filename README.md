@@ -29,6 +29,7 @@ When the balls bounce repeatedly, their color value keeps getting overwritten an
 
 ### W7
 activity 1: https://docs.google.com/document/d/13yni-LML8n_PMU0dRYNeQS41JEUzd5uGydpQOMvt19s/edit?usp=drivesdk
+
 my part:  Math: a. 3D vector basics: W5 pre-learning b. vector addition: W5 pre-learning c. vector magnitude and direction: W5 slides d. vector*scalar multiplication: W5 slides e. Vector3.Distance: W6 pre-learning f. normalized vectors: W6 slides
 activity 2:
 1. The BatW6 class needs a Transform variable to store the player’s target, a float variable to control the bat’s movement speed, and a bool variable to check whether the bat is chasing the player.
