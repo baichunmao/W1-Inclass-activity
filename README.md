@@ -34,7 +34,11 @@ my part:  Math: a. 3D vector basics: W5 pre-learning b. vector addition: W5 pre-
 activity 2:
 1. The BatW6 class needs a Transform variable to store the player’s target, a float variable to control the bat’s movement speed, and a bool variable to check whether the bat is chasing the player.
 2. The class needs Start() and Update(), which are provided by Unity. It also needs two custom public methods: StartChasingPlayer() and StopChasingPlayer()
-3. Start() enables chasing when the game begins. Update() moves the bat towards the target while chasing is enabled. StartChasingPlayer() allows the bat to start chasing the player, while StopChasingPlayer() stops the bat from chasing.
+3. Start() enables chasing when the game begins. Update() moves the bat towards the target while chasing is enabled. StartChasingPlayer() allows the bat to start chasingthe player, while StopChasingPlayer() stops the bat from chasing.
+
+### W8
+The original line was transform.position += movement * Vector3.forward * _moveSpeed * Time.deltaTime;. The problem is that Vector3.forward is a static world-space direction, always (0, 0, 1). It doesn't change when the Muskrat rotates. So after I turned the Muskrat with the left/right keys, pressing forward/backward still moved it along the world Z axis instead of in the direction it was facing. The Muskrat would look one way and slide another way. The fix was to use transform.forward instead. It is the Muskrat's own forward direction expressed in world space, so it updates every time the Muskrat rotates, and the movement always follows the direction the Muskrat is facing: transform.position += movement * transform.forward * _moveSpeed * Time.deltaTime
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
